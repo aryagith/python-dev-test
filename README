@@ -1,0 +1,52 @@
+This script takes an image, applies transformations, overlays animated captions, generates AI narration, mixes background music, and creates a video with synchronized voiceover and subtitles.
+
+**Requirements**:
+-Install Python 3.8+
+-Install required libraries:
+    ```console
+    pip install pillow gtts
+    ```
+-Install FFmpeg (Required for video & audio processing):
+    Windows: Download from https://ffmpeg.org/download.html
+    Mac/Linux: Install via package manager or use above link
+       ```console
+        sudo apt install ffmpeg   # Debian/Ubuntu  
+        brew install ffmpeg       # macOS  
+       ```
+
+**How to Use**:
+-Prepare Assets
+    Place your input image (input.jpg) and background music (background.mp3) in the same directory.
+    Ensure resources/Roboto-Bold.ttf exists (or update the font path in the script).
+    Modify Configuration (Optional):
+        Open generate_video.py and update these settings:
+      ```python
+        **INPUT_IMAGE = "input.jpg"   # Your image file
+        BACKGROUND_MUSIC = "background.mp3"  # Background music file
+        CAPTION_TEXT = "Hello, this is the Engineering building on my campus."  # Caption to be displayed
+        CAPTION_COLOR = "yellow"  # Caption text color (yellow, white, red, etc.)
+        FONT_PATH = "resources/Roboto-Bold.ttf"  # Font for captions
+        DURATION = 10  # Video duration in seconds**
+      ```
+-Run the Script
+    ```python
+    python generate_video.py
+    ```
+-Output
+    The final video will be saved as output.mp4.
+    Captions will appear word by word, synced with AI-generated narration.
+    The script automatically cleans up temporary files.
+
+**Troubleshooting**:
+-FFmpeg Not Found?
+    Make sure ffmpeg is installed and accessible from the command line:
+    ```console
+    ffmpeg -version
+    ```
+    If not recognized, add it to your system PATH.
+
+-No Audio in Output?
+    Ensure your background.mp3 file exists and is not corrupted. Try replacing it with another MP3.
+
+Caption Font Not Found?
+    Update FONT_PATH in the script to a valid .ttf font file.
