@@ -7,7 +7,7 @@ This script takes an image, applies transformations, overlays animated captions,
     pip install pillow gtts
     ```
 -Install FFmpeg (Required for video & audio processing):
-    Windows: Download from https://ffmpeg.org/download.html
+    Windows: Download from https://ffmpeg.org/download.html from the "Get packages & executable files" section.
     Mac/Linux: Install via package manager or use above link
        ```console
         sudo apt install ffmpeg   # Debian/Ubuntu  
